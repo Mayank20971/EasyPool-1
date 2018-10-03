@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ import java.util.regex.Pattern;
 
 public class signup extends AppCompatActivity implements View.OnClickListener {
 
+    ProgressBar progressbar;
     EditText em, pass;
 
     private FirebaseAuth mAuth;
@@ -29,6 +31,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
         em = (EditText) findViewById(R.id.em);
         pass = (EditText) findViewById(R.id.pass);
+
+        progressbar = (ProgressBar)findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -65,11 +69,17 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
+        progressbar.setVisibility(View.VISIBLE);
+
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                progressbar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"user Registered Su cessfully", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Some Error Occured ", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -84,6 +94,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.signup:
                 registerUser();
+                break;
 
             case R.id.login:
 
