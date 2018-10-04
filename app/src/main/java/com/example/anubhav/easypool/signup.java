@@ -39,6 +39,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
         findViewById(R.id.login).setOnClickListener(this);
         findViewById(R.id.signup).setOnClickListener(this);
+        findViewById(R.id.login).setOnClickListener(this);
     }
 
     private void registerUser(){
@@ -77,10 +78,16 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressbar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"user Registered Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Some Error Occurred ", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(getApplicationContext(),"user Registered Su cessfully", Toast.LENGTH_SHORT).show();
+                }else{
+                    try{
+                        throw task.getException();
+                    }catch (Exception e) {
+
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
 
                 }
             }

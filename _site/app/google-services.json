@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "710098050019",
+    "firebase_url": "https://easypool-32366.firebaseio.com",
+    "project_id": "easypool-32366",
+    "storage_bucket": "easypool-32366.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710098050019:android:fcc77ee93708f7ce",
+        "android_client_info": {
+          "package_name": "com.example.anubhav.easypool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710098050019-v3jj993vuefs06of5b63c6hhatgvnsck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anubhav.easypool",
+            "certificate_hash": "b67fb29aeebd40b13d6aed6978ff3c66754bd436"
+          }
+        },
+        {
+          "client_id": "710098050019-hkijsh4ciot1chtm9l4n1ap3ms9t3ir0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7JQk-f9naKNsN77PxYzDuztMdHLpJQQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710098050019-hkijsh4ciot1chtm9l4n1ap3ms9t3ir0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
