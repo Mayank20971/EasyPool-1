@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Easy Pool</string>
     <string name="email">Email</string>
+    <string name="title_activity_dashboard">dashboard</string>
 </resources>

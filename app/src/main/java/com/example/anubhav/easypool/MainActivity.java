@@ -13,11 +13,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth.AuthStateListener;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mauthlistener;
+    private AuthStateListener mauthlistener;
     private EditText getemail;
     private EditText getpass;
     @Override
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getpass = (EditText) findViewById(R.id.pass);
 
         mAuth = FirebaseAuth.getInstance();
-        mauthlistener = new FirebaseAuth.AuthStateListener() {
+        mauthlistener = new AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             }
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 startActivity(new Intent(this, signup.class));
 
-                break
+                break;
            
             case R.id.login:
                 Signin();
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(MainActivity.this ,dashboard.class));
+                            startActivity(new Intent(MainActivity.this ,test.class));
                         }else {
                                 Toast.makeText(MainActivity.this, "Authentication Error ", Toast.LENGTH_LONG).show();
                             }

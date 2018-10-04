@@ -79,7 +79,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                 progressbar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
 
-                    Toast.makeText(getApplicationContext(),"user Registered Su cessfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"User Registered Sucessfully", Toast.LENGTH_SHORT).show();
                 }else{
                     try{
                         throw task.getException();
