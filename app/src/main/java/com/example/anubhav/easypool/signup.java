@@ -37,6 +37,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
 
 
+        findViewById(R.id.login).setOnClickListener(this);
         findViewById(R.id.signup).setOnClickListener(this);
     }
 
@@ -76,9 +77,10 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressbar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"user Registered Su cessfully", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Some Error Occured ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"user Registered Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Some Error Occurred ", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -99,6 +101,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
             case R.id.login:
 
                 startActivity(new Intent(this, MainActivity.class));
+                finish();
 
                 break;
 
